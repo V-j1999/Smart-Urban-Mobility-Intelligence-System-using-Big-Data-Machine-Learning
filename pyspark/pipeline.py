@@ -17,3 +17,18 @@ demand_df = df.groupBy("hour", "day").count()
 demand_df.write.mode("overwrite").csv("data/processed", header=True)
 
 print("✅ Data pipeline completed")
+
+
+from pyspark.sql.functions import hour, dayofweek
+
+df = spark.read.parquet("data/yellow_tripdata_2023-01.parquet")
+
+# Feature engineering
+df = df.withColumn("hour", hour(df.tpep_pickup_datetime)) \
+       .withColumn("day", dayofweek(df.tpep_pickup_datetime))
+
+# Select useful columns
+df = df.select("hour", "day", "pickup_longitude", "pickup_latitude")
+
+# Save for map
+df.write.mode("overwrite").csv("data/map_data", header=True)
