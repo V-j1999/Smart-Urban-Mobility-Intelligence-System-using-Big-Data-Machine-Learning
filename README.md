@@ -35,7 +35,9 @@ It analyzes urban mobility patterns and predicts transportation demand using sca
 ## 🧠 Machine Learning Model
 - Model: Random Forest Regressor  
 - Input Features: Hour, Day  
-- Output: Predicted Taxi Demand  
+- Output: Predicted Taxi Demand
+
+
 
 ---
 
