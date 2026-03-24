@@ -41,4 +41,34 @@ It analyzes urban mobility patterns and predicts transportation demand using sca
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure :
+
+NYC-Taxi-Smart-Mobility/
+│
+├── data/
+│ ├── raw/ # Original NYC taxi dataset (not uploaded)
+│ ├── processed/ # Cleaned & aggregated data
+│ └── map_data/ # Latitude/Longitude data for heatmap
+│
+├── pyspark/
+│ └── pipeline.py # Big Data processing using PySpark
+│
+├── ml/
+│ ├── train_model.py # ML model training script
+│ └── model.pkl # Saved trained model (ignored in Git)
+│
+├── app/
+│ └── streamlit_app.py # Interactive dashboard & prediction app
+│
+├── utils/
+│ └── preprocess.py # Data cleaning functions
+│
+├── notebooks/
+│ ├── eda.ipynb # Exploratory Data Analysis
+│ └── feature_engineering.ipynb # Feature creation experiments
+│
+├── requirements.txt # Project dependencies
+├── .gitignore # Ignore large files (data, models)
+└── README.md # Project documentation
+
+📌 Note: Large datasets and trained models are excluded from the repository using .gitignore.
