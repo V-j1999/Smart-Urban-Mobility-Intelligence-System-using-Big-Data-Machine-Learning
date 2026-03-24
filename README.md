@@ -72,3 +72,81 @@ NYC-Taxi-Smart-Mobility/
 └── README.md # Project documentation
 
 📌 Note: Large datasets and trained models are excluded from the repository using .gitignore.
+
+            ┌────────────────────────────┐
+            │   NYC Taxi Raw Dataset     │
+            │  (Parquet / Large Files)   │
+            └────────────┬───────────────┘
+                         │
+                         ▼
+            ┌────────────────────────────┐
+            │     PySpark Pipeline       │
+            │  (Data Cleaning + ETL)     │
+            └────────────┬───────────────┘
+                         │
+                         ▼
+            ┌────────────────────────────┐
+            │   Processed Data (CSV)     │
+            │  Hour, Day, Demand, Geo    │
+            └────────────┬───────────────┘
+                         │
+    ┌────────────────────┼────────────────────┐
+    ▼                    ▼                    ▼
+┌───────────────┐ ┌────────────────┐ ┌────────────────────┐
+│ ML Model │ │ Streamlit App │ │ Map Visualization │
+│ (RandomForest)│ │ Dashboard UI │ │ (PyDeck Heatmap) │
+└──────┬────────┘ └────────┬───────┘ └────────┬───────────┘
+│ │ │
+▼ ▼ ▼
+┌────────────────────────────────────────────────────────────┐
+│ 🚕 Demand Prediction & Business Insights │
+└────────────────────────────────────────────────────────────┘
+
+
+---
+
+## 🔄 Data Pipeline Workflow
+
+```markdown id="1r5l91"
+## 🔄 Workflow
+
+1. 📥 Data Ingestion  
+   - Load raw NYC Taxi dataset (Parquet format)
+
+2. ⚙️ Data Processing (PySpark)  
+   - Clean data  
+   - Extract features (hour, day)  
+   - Aggregate demand  
+
+3. 🧠 Feature Engineering  
+   - Time-based features  
+   - Demand grouping  
+
+4. 🤖 Machine Learning  
+   - Train Random Forest model  
+   - Predict taxi demand  
+
+5. 🌐 Deployment  
+   - Streamlit app for real-time predictions  
+   - Interactive dashboard  
+
+6. 🗺️ Visualization  
+   - Heatmap of taxi demand (Uber-style)  
+   - Time-based trend analysis
+
+## 📊 Key Features
+
+- 🚕 Demand analysis by hour & weekday  
+- 🤖 Machine Learning-based demand prediction  
+- ⚡ Scalable PySpark data pipeline  
+- 🗺️ Geospatial heatmap visualization (Uber-style)  
+- 📈 Interactive Streamlit dashboard  
+- 📊 Real-time prediction interface
+
+
+## 🎯 End-to-End Pipeline
+
+Raw Data → PySpark Processing → Feature Engineering → ML Model → Streamlit App → Visualization → Business Insights
+
+
+
